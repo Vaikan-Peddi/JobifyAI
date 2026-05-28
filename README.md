@@ -54,15 +54,6 @@ flowchart TD
     Sheets --> Tracker["Application Tracker Tab"]
 ```
 
-## What Makes v2 More Practical
-
-- SQLite is the source of truth, so repeated runs can tell what is actually new.
-- Google Sheets is an output and workflow layer, not the only database.
-- The agent prefers structured public ATS APIs for Greenhouse, Lever, and Ashby URLs.
-- The `New This Run` tab shows only newly discovered jobs.
-- The `Application Tracker` tab is append-only for new jobs, so your manual status edits are not overwritten.
-- The default mock mode still works offline enough to test the pipeline.
-
 ## Project Structure
 
 ```text
