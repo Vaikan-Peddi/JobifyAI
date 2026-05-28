@@ -1,0 +1,29 @@
+services:
+  startup-hiring-agent:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    command: ["python", "main.py", "--dry-run"]
+
+  startup-hiring-agent-write:
+    build: .
+    profiles: ["write"]
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./service_account.json:/app/service_account.json:ro
+    command: ["python", "main.py", "--write-sheets"]
+
+  ollama:
+    image: ollama/ollama:latest
+    profiles: ["ollama"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama:/root/.ollama
+
+volumes:
+  ollama:

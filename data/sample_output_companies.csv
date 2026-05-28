@@ -1,0 +1,2 @@
+company_id,company_name,website,category,description,headquarters,hiring_page,careers_page,source_url,discovered_at,confidence_score,notes
+cmp_sampleaurora,Aurora AI Labs,https://www.auroraailabs.example,AI/ML,AI startup building applied LLM products for customer operations,"San Francisco, CA",https://www.auroraailabs.example/careers,https://www.auroraailabs.example/careers,sample://aurora-ai-careers,2026-05-28T00:00:00+00:00,0.86,Sample output row

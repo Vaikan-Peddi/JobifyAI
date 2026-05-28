@@ -1,0 +1,11 @@
+.env
+.git
+.pytest_cache
+.venv
+venv
+__pycache__
+*.pyc
+service_account.json
+service_path.json
+data/*.sqlite3
+data/output_*.csv

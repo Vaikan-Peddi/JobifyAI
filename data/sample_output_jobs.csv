@@ -1,0 +1,2 @@
+job_id,company_id,company_name,role_title,role_category,experience_level,location,work_mode,application_link,job_description_url,source_url,required_skills,fresher_friendly,confidence_score,discovered_at,notes
+job_sampleaurora,cmp_sampleaurora,Aurora AI Labs,"New Grad Software Engineer, Full Stack",Full Stack,New Grad,"San Francisco, CA",Hybrid,https://jobs.lever.co/aurora-ai-labs/new-grad-software-engineer,https://jobs.lever.co/aurora-ai-labs/new-grad-software-engineer,sample://aurora-ai-careers,"Python, React, LLM",TRUE,0.92,2026-05-28T00:00:00+00:00,Sample output row
