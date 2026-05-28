@@ -1,6 +1,10 @@
-# startup-hiring-agent
+<p align="center">
+  <img src="assets/jobifyai-logo.svg" alt="JobifyAI logo" width="720">
+</p>
 
-`startup-hiring-agent` is a practical AI-assisted job discovery pipeline for finding startup software and AI/ML roles that are realistic for freshers, interns, new grads, junior engineers, and early-career developers.
+# JobifyAI
+
+`JobifyAI` is a practical AI-assisted job discovery pipeline for finding startup software and AI/ML roles that are realistic for freshers, interns, new grads, junior engineers, and early-career developers.
 
 The project searches public sources, prefers structured public ATS APIs when possible, scrapes politely when needed, extracts and validates software/AI roles, deduplicates results with stable IDs, stores incremental state in SQLite, writes CSV files, and can sync results to Google Sheets.
 
@@ -62,7 +66,7 @@ flowchart TD
 ## Project Structure
 
 ```text
-startup-hiring-agent/
+JobifyAI/
   main.py
   config.py
   Dockerfile
@@ -165,7 +169,7 @@ python main.py --dry-run --database-path data/my_job_search.sqlite3
 Build the image:
 
 ```bash
-docker build -t startup-hiring-agent .
+docker build -t jobifyai .
 ```
 
 Run dry mode:
@@ -174,7 +178,7 @@ Run dry mode:
 docker run --rm \
   --env-file .env \
   -v "$PWD/data:/app/data" \
-  startup-hiring-agent
+  jobifyai
 ```
 
 Run with custom CLI args:
@@ -183,7 +187,7 @@ Run with custom CLI args:
 docker run --rm \
   --env-file .env \
   -v "$PWD/data:/app/data" \
-  startup-hiring-agent \
+  jobifyai \
   python main.py --dry-run --provider seed
 ```
 
@@ -194,7 +198,7 @@ docker run --rm \
   --env-file .env \
   -v "$PWD/data:/app/data" \
   -v "$PWD/service_account.json:/app/service_account.json:ro" \
-  startup-hiring-agent \
+  jobifyai \
   python main.py --write-sheets
 ```
 
@@ -203,20 +207,20 @@ docker run --rm \
 Dry run:
 
 ```bash
-docker compose up --build startup-hiring-agent
+docker compose up --build jobifyai
 ```
 
 Google Sheets write mode:
 
 ```bash
-docker compose --profile write up --build startup-hiring-agent-write
+docker compose --profile write up --build jobifyai-write
 ```
 
 Run Ollama locally through Compose:
 
 ```bash
 docker compose --profile ollama up -d ollama
-docker exec -it startup-hiring-agent-ollama-1 ollama pull llama3.1
+docker exec -it jobifyai-ollama-1 ollama pull llama3.1
 ```
 
 Then set:
@@ -229,7 +233,7 @@ OLLAMA_BASE_URL=http://ollama:11434
 And run:
 
 ```bash
-docker compose up --build startup-hiring-agent
+docker compose up --build jobifyai
 ```
 
 ## Google Sheets Setup
@@ -389,8 +393,8 @@ pytest
 Docker test run:
 
 ```bash
-docker build -t startup-hiring-agent .
-docker run --rm startup-hiring-agent python -m pytest -q
+docker build -t jobifyai .
+docker run --rm jobifyai python -m pytest -q
 ```
 
 ## Ethical Scraping Notes

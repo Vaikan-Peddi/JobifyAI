@@ -1,5 +1,7 @@
+name: jobifyai
+
 services:
-  startup-hiring-agent:
+  jobifyai:
     build: .
     env_file:
       - .env
@@ -7,7 +9,7 @@ services:
       - ./data:/app/data
     command: ["python", "main.py", "--dry-run"]
 
-  startup-hiring-agent-write:
+  jobifyai-write:
     build: .
     profiles: ["write"]
     env_file:
